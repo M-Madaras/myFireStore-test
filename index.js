@@ -8,7 +8,10 @@ initializeApp({
 
 const db = getFirestore()
 
-const car = { make: 'Audi', model: 'A3', year: 2018, color:'grey'}
+const car2 = { make: 'Nissan', model: 'pathfinder', year: 2019, color:'silver'}
 
-db.collection('cars').add(car)
-
+db.collection('cars').add(car2)
+    .then(doc => {
+        console.log('Doc added:', doc.id)
+    })
+    .catch(err => console.log(err))
